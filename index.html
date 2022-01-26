@@ -12,21 +12,45 @@
 <body>
     <div class="container">
         <div class="input">
-            <label for="number">Enter number:</label>
-            <input type="text" id="number" name="number" required minlength="4" maxlength="8" size="10">
+            <div class="input-areas" id="input-areas">
+                <div>
+                    <label for="number"></label>
+                    <input type="text" id="number" name="number" required minlength="4" maxlength="8" size="10"
+                        placeholder="Enter number:">
+                </div>
+
+                <div class="month-input" id="month-input">
+                    <input type="text" maxlength="8" size="5" id="month" style="display: none;"
+                        placeholder="Enter month:">
+                </div>
+                <div>
+                    <label for="options"></label>
+
+                    <select onchange="checkType()" name="options" id="options">
+                        <option value="date">Date</option>
+                        <option value="math">Math</option>
+                        <option value="trivia" selected>Trivia</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-btn">
+                <p id="validation-error"></p>
+                <button onclick="getRandom()" type="button" id="button">Get Random</button>
+                <button onclick="checkNumber()" type="button" id="button">Check Number</button>
+            </div>
         </div>
-        <p id="validation-error"></p>
 
-        <div class="input-btn">
-            <button onclick="checkNumber()" type="button" id="button">Get</button>
+        <div class="">
+            <p id="validation-error"></p>
+
+            <p id="output">
+
+            </p>
+            <p id="output-number">
+
+            </p>
         </div>
-
-        <p id="output">
-
-        </p>
-        <p id="output-number">
-
-        </p>
 
     </div>
 
